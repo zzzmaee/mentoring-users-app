@@ -6,24 +6,15 @@
       "runner": "nx-cloud",
       "options": {
         "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "YjRiMzg1ZDEtNTg0Zi00ODQ5LTkzNDQtZDNmOWRhZWE1ZTIyfHJlYWQtd3JpdGU="
+        "accessToken": "Y2VlZWE3ODctZmE2OC00NWU0LTk3NGEtYTYwM2Q3OTIwMmI3fHJlYWQtd3JpdGU="
       }
     }
   },
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
-    },
-    "test": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"]
-    },
-    "e2e": {
-      "inputs": ["default", "^production"]
-    },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"]
-    }
+    "build": { "dependsOn": ["^build"], "inputs": ["production", "^production"] },
+    "test": { "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"] },
+    "e2e": { "inputs": ["default", "^production"] },
+    "lint": { "inputs": ["default", "{workspaceRoot}/.eslintrc.json", "{workspaceRoot}/.eslintignore"] }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -43,12 +34,7 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nx/angular:library": {
-      "linter": "eslint",
-      "unitTestRunner": "jest"
-    },
-    "@nx/angular:component": {
-      "style": "scss"
-    }
+    "@nx/angular:library": { "linter": "eslint", "unitTestRunner": "jest" },
+    "@nx/angular:component": { "style": "scss" }
   }
 }
